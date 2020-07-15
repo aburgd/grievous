@@ -14,14 +14,12 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    hello_there = ("hello there", "hello there!")
+    hello_there = "hello there"
 
     content_no_case = message.content.lower()
 
-    if content_no_case in hello_there:
+    if hello_there in content_no_case:
         asset = discord.File("assets/grievous.gif", filename="grievous.gif")
-        # embed = discord.Embed()
-        # embed.set_image(url="attachment://{}".format(asset.filename))
         await message.channel.send(file=asset)
 
 
